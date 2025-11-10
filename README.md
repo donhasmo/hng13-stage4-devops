@@ -42,9 +42,8 @@ vpcctl/                 # project root
 ├─ envs/
 │   ├─ 1.env
 │   └─ 2.env
-│         
-└─ tests/
-    └─ test.sh         # quick smoke test
+│--cleanup.sh         
+└─ test.sh         # quick smoke test
 
 ### SET UP VPC WITH SCRIPT
 #### Steps
@@ -106,9 +105,9 @@ sudo chmod +x ./test.sh
 ```
 2. Run script:
 ```
-sudo ./test.sh envs/1.env
+sudo ./test.sh
 ```
-NB: Last 2 test cases will fail because peering has not been set up yet
+NB: Some Cross-VPC Router Reachability Tests cases will fail because peering has not been set up yet
 
 ### MANUAL TEST
 
