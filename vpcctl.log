@@ -129,3 +129,183 @@
 2025-11-11 07:31:45 [INFO] NAT and FORWARD rules applied for nsrouter2
 2025-11-11 07:31:45 [PASS] VPC vpcbr2 (10.1.0.0/16) created successfully.
 2025-11-11 07:31:45 [INFO] ✅ Action create completed.
+2025-11-11 07:44:30 [INFO] Deleting VPC: vpcbr1
+2025-11-11 07:44:30 [INFO] Namespace nspublic1 deleted.
+2025-11-11 07:44:30 [INFO] Namespace nsprivate1 deleted.
+2025-11-11 07:44:30 [INFO] Namespace nsrouter1 deleted.
+2025-11-11 07:44:31 [INFO] Bridge vpcbr1-pub removed if present.
+2025-11-11 07:44:31 [INFO] Bridge vpcbr1-priv removed if present.
+2025-11-11 07:44:31 [INFO] Host ext veth vhost1 removed if present.
+2025-11-11 07:44:31 [PASS] VPC vpcbr1 deleted.
+2025-11-11 07:44:31 [INFO] Deleting VPC: vpcbr2
+2025-11-11 07:44:31 [INFO] Namespace nspublic2 deleted.
+2025-11-11 07:44:31 [INFO] Namespace nsprivate2 deleted.
+2025-11-11 07:44:31 [INFO] Namespace nsrouter2 deleted.
+2025-11-11 07:44:32 [INFO] Bridge vpcbr2-pub removed if present.
+2025-11-11 07:44:32 [INFO] Bridge vpcbr2-priv removed if present.
+2025-11-11 07:44:32 [INFO] Host ext veth vhost2 removed if present.
+2025-11-11 07:44:32 [PASS] VPC vpcbr2 deleted.
+2025-11-11 07:44:32 [INFO] ✅ Action delete completed.
+2025-11-11 07:44:54 [INFO] Starting creation of VPC: vpcbr1 (10.0.0.0/16)
+2025-11-11 07:44:54 [INFO] Created bridge vpcbr1-pub
+2025-11-11 07:44:54 [INFO] Created bridge vpcbr1-priv
+2025-11-11 07:44:54 [INFO] Created router namespace nsrouter1
+2025-11-11 07:44:54 [INFO] Created router<->public veth pair: vr-pub-vpcbr1 <-> vbr-pub-vpcbr1
+2025-11-11 07:44:55 [INFO] Created router<->private veth pair: vr-priv-vpcbr1 <-> vbr-priv-vpcbr1
+2025-11-11 07:44:55 [INFO] Created public namespace nspublic1
+2025-11-11 07:44:55 [INFO] Configured public namespace nspublic1: IP 10.0.1.2/24 , GW 10.0.1.1
+2025-11-11 07:44:55 [INFO] Created private namespace nsprivate1
+2025-11-11 07:44:55 [INFO] Configured private namespace nsprivate1: IP 10.0.2.2/24 , GW 10.0.2.1
+2025-11-11 07:44:55 [INFO] Created host↔router veth pair: vhost1 <-> vrtrext1
+2025-11-11 07:44:56 [INFO] Router nsrouter1 default route set to 192.168.100.1 via vrtrext1
+2025-11-11 07:44:56 [INFO] NAT and FORWARD rules applied for nsrouter1
+2025-11-11 07:44:56 [PASS] VPC vpcbr1 (10.0.0.0/16) created successfully.
+2025-11-11 07:44:56 [INFO] Starting creation of VPC: vpcbr2 (10.1.0.0/16)
+2025-11-11 07:44:56 [INFO] Created bridge vpcbr2-pub
+2025-11-11 07:44:56 [INFO] Created bridge vpcbr2-priv
+2025-11-11 07:44:56 [INFO] Created router namespace nsrouter2
+2025-11-11 07:44:56 [INFO] Created router<->public veth pair: vr-pub-vpcbr2 <-> vbr-pub-vpcbr2
+2025-11-11 07:44:56 [INFO] Created router<->private veth pair: vr-priv-vpcbr2 <-> vbr-priv-vpcbr2
+2025-11-11 07:44:56 [INFO] Created public namespace nspublic2
+2025-11-11 07:44:57 [INFO] Configured public namespace nspublic2: IP 10.1.1.2/24 , GW 10.1.1.1
+2025-11-11 07:44:57 [INFO] Created private namespace nsprivate2
+2025-11-11 07:44:57 [INFO] Configured private namespace nsprivate2: IP 10.1.2.2/24 , GW 10.1.2.1
+2025-11-11 07:44:57 [INFO] Created host↔router veth pair: vhost2 <-> vrtrext2
+2025-11-11 07:44:57 [INFO] Router nsrouter2 default route set to 192.168.101.1 via vrtrext2
+2025-11-11 07:44:57 [INFO] NAT and FORWARD rules applied for nsrouter2
+2025-11-11 07:44:57 [PASS] VPC vpcbr2 (10.1.0.0/16) created successfully.
+2025-11-11 07:44:57 [INFO] ✅ Action create completed.
+2025-11-11 07:45:17 [INFO] Creating peering between nsrouter1 (10.0.0.0/16) and nsrouter2 (10.1.0.0/16)
+2025-11-11 07:45:17 [INFO] Created peering veth pair: vpeer1a <-> vpeer1b
+2025-11-11 07:45:18 [PASS] Peering established between nsrouter1 and nsrouter2
+2025-11-11 07:45:18 [INFO] ✅ Action peer completed.
+2025-11-11 07:46:51 [INFO] Peering interfaces (vpeer1a, vpeer1b) removed between nsrouter1 and nsrouter2.
+2025-11-11 07:46:51 [PASS] Peering removed between nsrouter1 and nsrouter2
+2025-11-11 07:46:51 [INFO] ✅ Action unpeer completed.
+2025-11-11 07:54:49 [INFO] Deleting VPC: vpcbr1
+2025-11-11 07:54:49 [INFO] Namespace nspublic1 deleted.
+2025-11-11 07:54:49 [INFO] Namespace nsprivate1 deleted.
+2025-11-11 07:54:49 [INFO] Namespace nsrouter1 deleted.
+2025-11-11 07:54:50 [INFO] Bridge vpcbr1-pub removed if present.
+2025-11-11 07:54:50 [INFO] Bridge vpcbr1-priv removed if present.
+2025-11-11 07:54:50 [INFO] Host ext veth vhost1 removed if present.
+2025-11-11 07:54:50 [PASS] VPC vpcbr1 deleted.
+2025-11-11 07:54:50 [INFO] Deleting VPC: vpcbr2
+2025-11-11 07:54:50 [INFO] Namespace nspublic2 deleted.
+2025-11-11 07:54:50 [INFO] Namespace nsprivate2 deleted.
+2025-11-11 07:54:50 [INFO] Namespace nsrouter2 deleted.
+2025-11-11 07:54:50 [INFO] Bridge vpcbr2-pub removed if present.
+2025-11-11 07:54:51 [INFO] Bridge vpcbr2-priv removed if present.
+2025-11-11 07:54:51 [INFO] Host ext veth vhost2 removed if present.
+2025-11-11 07:54:51 [PASS] VPC vpcbr2 deleted.
+2025-11-11 07:54:51 [INFO] ✅ Action delete completed.
+2025-11-11 07:56:09 [INFO] Starting creation of VPC: vpcbr1 (10.0.0.0/16)
+2025-11-11 07:56:09 [INFO] Created bridge vpcbr1-pub
+2025-11-11 07:56:09 [INFO] Created bridge vpcbr1-priv
+2025-11-11 07:56:09 [INFO] Created router namespace nsrouter1
+2025-11-11 07:56:09 [INFO] Created router<->public veth pair: vr-pub-vpcbr1 <-> vbr-pub-vpcbr1
+2025-11-11 07:56:10 [INFO] Created router<->private veth pair: vr-priv-vpcbr1 <-> vbr-priv-vpcbr1
+2025-11-11 07:56:10 [INFO] Created public namespace nspublic1
+2025-11-11 07:56:10 [INFO] Configured public namespace nspublic1: IP 10.0.1.2/24 , GW 10.0.1.1
+2025-11-11 07:56:10 [INFO] Created private namespace nsprivate1
+2025-11-11 07:56:10 [INFO] Configured private namespace nsprivate1: IP 10.0.2.2/24 , GW 10.0.2.1
+2025-11-11 07:56:10 [INFO] Created host↔router veth pair: vhost1 <-> vrtrext1
+2025-11-11 07:56:11 [INFO] Router nsrouter1 default route set to 192.168.100.1 via vrtrext1
+2025-11-11 07:56:11 [INFO] NAT and FORWARD rules applied for nsrouter1
+2025-11-11 07:56:11 [PASS] VPC vpcbr1 (10.0.0.0/16) created successfully.
+2025-11-11 07:56:11 [INFO] Starting creation of VPC: vpcbr2 (10.1.0.0/16)
+2025-11-11 07:56:11 [INFO] Created bridge vpcbr2-pub
+2025-11-11 07:56:11 [INFO] Created bridge vpcbr2-priv
+2025-11-11 07:56:11 [INFO] Created router namespace nsrouter2
+2025-11-11 07:56:11 [INFO] Created router<->public veth pair: vr-pub-vpcbr2 <-> vbr-pub-vpcbr2
+2025-11-11 07:56:11 [INFO] Created router<->private veth pair: vr-priv-vpcbr2 <-> vbr-priv-vpcbr2
+2025-11-11 07:56:11 [INFO] Created public namespace nspublic2
+2025-11-11 07:56:12 [INFO] Configured public namespace nspublic2: IP 10.1.1.2/24 , GW 10.1.1.1
+2025-11-11 07:56:12 [INFO] Created private namespace nsprivate2
+2025-11-11 07:56:12 [INFO] Configured private namespace nsprivate2: IP 10.1.2.2/24 , GW 10.1.2.1
+2025-11-11 07:56:12 [INFO] Created host↔router veth pair: vhost2 <-> vrtrext2
+2025-11-11 07:56:12 [INFO] Router nsrouter2 default route set to 192.168.101.1 via vrtrext2
+2025-11-11 07:56:12 [INFO] NAT and FORWARD rules applied for nsrouter2
+2025-11-11 07:56:12 [PASS] VPC vpcbr2 (10.1.0.0/16) created successfully.
+2025-11-11 07:56:12 [INFO] ✅ Action create completed.
+2025-11-11 07:56:22 [INFO] Deleting VPC: vpcbr1
+2025-11-11 07:56:22 [INFO] Namespace nspublic1 deleted.
+2025-11-11 07:56:22 [INFO] Namespace nsprivate1 deleted.
+2025-11-11 07:56:22 [INFO] Namespace nsrouter1 deleted.
+2025-11-11 07:56:22 [INFO] Bridge vpcbr1-pub removed if present.
+2025-11-11 07:56:22 [INFO] Bridge vpcbr1-priv removed if present.
+2025-11-11 07:56:22 [INFO] Host ext veth vhost1 removed if present.
+2025-11-11 07:56:22 [PASS] VPC vpcbr1 deleted.
+2025-11-11 07:56:22 [INFO] Deleting VPC: vpcbr2
+2025-11-11 07:56:22 [INFO] Namespace nspublic2 deleted.
+2025-11-11 07:56:22 [INFO] Namespace nsprivate2 deleted.
+2025-11-11 07:56:23 [INFO] Namespace nsrouter2 deleted.
+2025-11-11 07:56:23 [INFO] Bridge vpcbr2-pub removed if present.
+2025-11-11 07:56:23 [INFO] Bridge vpcbr2-priv removed if present.
+2025-11-11 07:56:23 [INFO] Host ext veth vhost2 removed if present.
+2025-11-11 07:56:23 [PASS] VPC vpcbr2 deleted.
+2025-11-11 07:56:23 [INFO] ✅ Action delete completed.
+2025-11-11 07:56:54 [INFO] Starting creation of VPC: vpcbr1 (10.0.0.0/16)
+2025-11-11 07:56:54 [INFO] Created bridge vpcbr1-pub
+2025-11-11 07:56:54 [INFO] Created bridge vpcbr1-priv
+2025-11-11 07:56:54 [INFO] Created router namespace nsrouter1
+2025-11-11 07:56:54 [INFO] Created router<->public veth pair: vr-pub-vpcbr1 <-> vbr-pub-vpcbr1
+2025-11-11 07:56:54 [INFO] Created router<->private veth pair: vr-priv-vpcbr1 <-> vbr-priv-vpcbr1
+2025-11-11 07:56:54 [INFO] Created public namespace nspublic1
+2025-11-11 07:56:54 [INFO] Configured public namespace nspublic1: IP 10.0.1.2/24 , GW 10.0.1.1
+2025-11-11 07:56:54 [INFO] Created private namespace nsprivate1
+2025-11-11 07:56:55 [INFO] Configured private namespace nsprivate1: IP 10.0.2.2/24 , GW 10.0.2.1
+2025-11-11 07:56:55 [INFO] Created host↔router veth pair: vhost1 <-> vrtrext1
+2025-11-11 07:56:55 [INFO] Router nsrouter1 default route set to 192.168.100.1 via vrtrext1
+2025-11-11 07:56:55 [INFO] NAT and FORWARD rules applied for nsrouter1
+2025-11-11 07:56:55 [PASS] VPC vpcbr1 (10.0.0.0/16) created successfully.
+2025-11-11 07:56:55 [INFO] Starting creation of VPC: vpcbr2 (10.1.0.0/16)
+2025-11-11 07:56:55 [INFO] Created bridge vpcbr2-pub
+2025-11-11 07:56:55 [INFO] Created bridge vpcbr2-priv
+2025-11-11 07:56:55 [INFO] Created router namespace nsrouter2
+2025-11-11 07:56:55 [INFO] Created router<->public veth pair: vr-pub-vpcbr2 <-> vbr-pub-vpcbr2
+2025-11-11 07:56:55 [INFO] Created router<->private veth pair: vr-priv-vpcbr2 <-> vbr-priv-vpcbr2
+2025-11-11 07:56:55 [INFO] Created public namespace nspublic2
+2025-11-11 07:56:56 [INFO] Configured public namespace nspublic2: IP 10.1.1.2/24 , GW 10.1.1.1
+2025-11-11 07:56:56 [INFO] Created private namespace nsprivate2
+2025-11-11 07:56:56 [INFO] Configured private namespace nsprivate2: IP 10.1.2.2/24 , GW 10.1.2.1
+2025-11-11 07:56:56 [INFO] Created host↔router veth pair: vhost2 <-> vrtrext2
+2025-11-11 07:56:56 [INFO] Router nsrouter2 default route set to 192.168.101.1 via vrtrext2
+2025-11-11 07:56:56 [INFO] NAT and FORWARD rules applied for nsrouter2
+2025-11-11 07:56:56 [PASS] VPC vpcbr2 (10.1.0.0/16) created successfully.
+2025-11-11 07:56:56 [INFO] ✅ Action create completed.
+2025-11-11 08:02:55 [INFO] Creating peering between nsrouter1 (10.0.0.0/16) and nsrouter2 (10.1.0.0/16)
+2025-11-11 08:02:55 [INFO] Created peering veth pair: vpeer1a <-> vpeer1b
+2025-11-11 08:02:55 [PASS] Peering established between nsrouter1 and nsrouter2
+2025-11-11 08:02:55 [INFO] ✅ Action peer completed.
+2025-11-11 08:10:54 [INFO] Peering interfaces (vpeer1a, vpeer1b) removed between nsrouter1 and nsrouter2.
+2025-11-11 08:10:54 [PASS] Peering removed between nsrouter1 and nsrouter2
+2025-11-11 08:10:54 [INFO] ✅ Action unpeer completed.
+2025-11-11 08:11:55 [INFO] Deleting VPC: vpcbr1
+2025-11-11 08:11:55 [INFO] Namespace nspublic1 deleted.
+2025-11-11 08:11:55 [INFO] Namespace nsprivate1 deleted.
+2025-11-11 08:11:55 [INFO] Namespace nsrouter1 deleted.
+2025-11-11 08:11:56 [INFO] Bridge vpcbr1-pub removed if present.
+2025-11-11 08:11:56 [INFO] Bridge vpcbr1-priv removed if present.
+2025-11-11 08:11:56 [INFO] Host ext veth vhost1 removed if present.
+2025-11-11 08:11:56 [PASS] VPC vpcbr1 deleted.
+2025-11-11 08:11:56 [INFO] Deleting VPC: vpcbr2
+2025-11-11 08:11:56 [INFO] Namespace nspublic2 deleted.
+2025-11-11 08:11:56 [INFO] Namespace nsprivate2 deleted.
+2025-11-11 08:11:56 [INFO] Namespace nsrouter2 deleted.
+2025-11-11 08:11:57 [INFO] Bridge vpcbr2-pub removed if present.
+2025-11-11 08:11:57 [INFO] Bridge vpcbr2-priv removed if present.
+2025-11-11 08:11:57 [INFO] Host ext veth vhost2 removed if present.
+2025-11-11 08:11:57 [PASS] VPC vpcbr2 deleted.
+2025-11-11 08:11:57 [INFO] ✅ Action delete completed.
+2025-11-11 08:18:26 [INFO] Deleting VPC: vpcbr1
+2025-11-11 08:18:26 [INFO] Bridge vpcbr1-pub removed if present.
+2025-11-11 08:18:26 [INFO] Bridge vpcbr1-priv removed if present.
+2025-11-11 08:18:26 [INFO] Host ext veth vhost1 removed if present.
+2025-11-11 08:18:26 [PASS] VPC vpcbr1 deleted.
+2025-11-11 08:18:26 [INFO] Deleting VPC: vpcbr2
+2025-11-11 08:18:26 [INFO] Bridge vpcbr2-pub removed if present.
+2025-11-11 08:18:26 [INFO] Bridge vpcbr2-priv removed if present.
+2025-11-11 08:18:26 [INFO] Host ext veth vhost2 removed if present.
+2025-11-11 08:18:26 [PASS] VPC vpcbr2 deleted.
+2025-11-11 08:18:26 [INFO] ✅ Action delete completed.

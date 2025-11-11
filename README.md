@@ -10,7 +10,7 @@ DevOps Intern Stage 4 Task -  Build Your Own Virtual Private Cloud (VPC) on Linu
 
 ### Concept Overview
                         +---------------------------+
-                        |       Linux Host (WSL)   |
+                        |       Linux Host (WSL)    |
                         |                           |
                         |   [eth0] → Internet       |
                         |        |                  |
@@ -65,6 +65,27 @@ OR create all
 ```
 sudo ./vpcctl.sh create envs/1.env envs/2.env
 ```
+![](./imgs/create.png "Create VPCs")
+
+### SET UP VPC PEERING
+#Create VPC peering between VPCs:
+```
+sudo ./vpcctl.sh peer envs/1.env envs/2.env
+```
+![](./imgs/create_peer.png "Create Peering between VPCs")
+
+#Remove VPC peering between VPCs:
+```
+sudo ./vpcctl.sh unpeer envs/1.env envs/2.env
+```
+![](./imgs/unpeer.png "Remove Peering between VPCs")
+
+
+#### VPC Peering test
+#Re-run test.sh
+```
+sudo ./test.sh
+```
 
 ### Destroy VPCs
 #### Steps
@@ -81,22 +102,7 @@ OR delete all
 ```
 sudo ./vpcctl.sh delete envs/1.env envs/2.env
 ```
-### Check Status of VPCs
-#### Steps
-```
-NB: For better clean up:
-```
-sudo ./cleanup.sh
-```
-
-# Status of VPC1
-sudo ./vpcctl.sh envs/1.env status
-```
-OR
-```
-# Status of VPC2
-sudo ./vpcctl.sh envs/2.env status
-```
+![](./imgs/delete.png "Delete VPCs")
 
 ### AUTOMATED TEST
 1. Make ./test.sh executable:
@@ -107,7 +113,16 @@ sudo chmod +x ./test.sh
 ```
 sudo ./test.sh
 ```
+
+![](./imgs/1_env_test.png "VPC1 test")
+
+![](./imgs/2_env_test.png "VPC2 test")
+
+![](./imgs/delete.png "Peering test before VPC peering set up")
 NB: Some Cross-VPC Router Reachability Tests cases will fail because peering has not been set up yet
+
+![](./imgs/2nd_peer_test.png "Peering test after peering is set up")
+
 
 ### MANUAL TEST
 
@@ -139,21 +154,6 @@ sudo ip netns exec ns-public1 ping -c 3 10.0.2.2
 sudo ip netns exec ns-private1 ping -c 3 8.8.8.8  
 #connection refused or timeout, because the private subnet isn’t exposed externally
 ```
-### SET UP VPC PEERING
-#Create VPC peering between VPCs:
-```
-sudo ./vpcctl.sh peer envs/1.env envs/2.env
-```
-#Remove VPC peering between VPCs:
-```
-sudo ./vpcctl.sh unpeer envs/1.env envs/2.env
-```
-
-#### VPC Peering test
-#Re-run test.sh
-```
-sudo ./test.sh
-```
 
 ### CLEAN UP
 #### Steps
@@ -165,3 +165,4 @@ sudo chmod +x cleanup.sh
 ```
 sudo ./cleanup.sh
 ```
+![](./imgs/conf_del.png "Confirm no resources after deleting")
