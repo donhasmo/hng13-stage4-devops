@@ -80,6 +80,13 @@ for ENV_FILE in "${ENV_FILES[@]}"; do
         pass "Private subnet cannot reach internet (as expected)"
     fi
 
+    # Show iptables for router to see dropped packets
+    echo
+    echo
+    echo "##### SEE DROPPED PACKETS FROM PRIVATE SUBNET TO INTERNET #####"
+    log "🔎 Checking iptables for dropped packets in $ROUTER_NS"
+    sudo ip netns exec "$ROUTER_NS" iptables -L FORWARD -n -v || true
+
     # 4️⃣ Start temporary HTTP servers
     log "4️⃣ Running HTTP servers"
     sudo ip netns exec "$PUB_NS" python3 -m http.server 80 >/dev/null 2>&1 &
