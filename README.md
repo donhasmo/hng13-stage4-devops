@@ -35,15 +35,26 @@ DevOps Intern Stage 4 Task -  Build Your Own Virtual Private Cloud (VPC) on Linu
 
 
 ### Project Structure
-
-vpcctl/                 # project root
-├─ vpcctl.py            # main Python CLI (create/destroy/list/peer/etc)
-├─ README.md
-├─ envs/
-│   ├─ 1.env
-│   └─ 2.env
-│--cleanup.sh         
-└─ test.sh         # quick smoke test
+```
+├── README.md
+├── cleanup.sh
+├── envs
+│   ├── 1.env
+│   └── 2.env
+├── imgs
+│   ├── 1_env_test.png
+│   ├── 1st_peer_test.png
+│   ├── 2_env_test.png
+│   ├── 2nd_peer_test.png
+│   ├── conf_del.png
+│   ├── create.png
+│   ├── create_peer.png
+│   ├── delete.png
+│   └── unpeer.png
+├── test.sh
+├── vpcctl.log
+└── vpcctl.sh
+```
 
 ### SET UP VPC WITH SCRIPT
 #### Steps
